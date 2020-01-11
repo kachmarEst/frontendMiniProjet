@@ -19,8 +19,7 @@ constructor(props){
 
     return(
      <tr>
-        <td>{this.props.etuds.prenom}</td>
-        <td>{this.props.etuds.nom}</td>
+    
         <td>{this.props.mats.nom}</td>
         <td>{this.props.obj.note}</td>
         <td>{this.props.obj.createdAt}</td>

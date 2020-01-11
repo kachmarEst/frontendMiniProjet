@@ -27,7 +27,7 @@ class AjouterEtudiant extends React.Component {
         axios.post('//localhost:8000/etudiants/ajouter',donnees,{headers:headers})
         .then( res=>{
             console.log(res.data);  
-            this.props.history.push('/');
+            this.props.history.push('/etudiants');
               })
         .catch(err=>{
             console.log(err.response);

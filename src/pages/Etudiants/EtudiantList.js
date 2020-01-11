@@ -6,7 +6,8 @@ class EtudiantList extends React.Component {
 constructor(props){
   super(props);
     this.state = {
-        etudiants:[]
+        etudiants:[],
+        searched:''
     }
 }
 
@@ -47,8 +48,22 @@ Delete = (id)=>{
 List = ()=>{
 
     if(this.state.etudiants){
-        return this.state.etudiants.map((etudiant,i)=><Listing key={i} obj={etudiant} del={this.Delete}/>)
+      if(this.state.searched){
+        return this.state.etudiants.filter((etudiant,i)=>  etudiant.filiere.toLowerCase().includes(this.state.searched.toLowerCase()) || etudiant.cne.toLowerCase().includes(this.state.searched.toLowerCase())).map((etudian,i)=> <Listing key={i} obj={etudian} del={this.Delete}/>);
+      }else{
+        return this.state.etudiants.map((etudian,i)=> <Listing key={i} obj={etudian} del={this.Delete}/>);
+
+      }
+        
+        
+
     }
+}
+chercher=(e)=>{
+  this.setState({
+    searched:e.target.value
+
+  })
 }
 
 
@@ -56,7 +71,8 @@ List = ()=>{
 
     return(
 <div className="container">
-     
+<span> Rechercher:  <input type="text" onChange={this.chercher} placeholder="filiere ou cne" /></span>
+
 <table class="table table-striped">
   <thead>
     <tr>     

@@ -48,7 +48,7 @@ componentDidMount(){
         axios.post('//localhost:8000/etudiants/modifier/'+this.props.match.params.id,donnees,{headers:headers})
         .then( res=>{
             console.log(res.data);  
-            this.props.history.push('/');
+            this.props.history.push('/etudiants');
               })
         .catch(err=>{
             console.log(err.response);

@@ -98,16 +98,14 @@ List = ()=>{
 }
 
 
+
   render() {
 
     return(
 <div className="container">
-     
 <table class="table table-striped">
   <thead>
     <tr>     
-      <th scope="col">Nom</th>
-      <th scope="col">Prenom</th>
       <th scope="col">Matiere</th>
       <th scope="col">Note</th>
       <th scope="col">Date de Creation</th>

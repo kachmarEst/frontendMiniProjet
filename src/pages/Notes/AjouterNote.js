@@ -64,7 +64,7 @@ componentDidMount(){
         axios.post('//localhost:8000/notes/ajouter',donnees,{headers:headers})
         .then( res=>{
             console.log(res.data);  
-            this.props.history.push('/');
+            this.props.history.push('/etudiants');
               })
         .catch(err=>{
             console.log(err.response);
